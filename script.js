@@ -18,38 +18,87 @@ console.log(arrPositiv);
 let minIndex = 0;
 let min = arr[0];
 
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] < min) {
-      min = arr[i];
-     minIndex = i;
-    }
+for (let i = 1; i < arr.length; i++) {
+  if (arr[i] < min) {
+    min = arr[i];
+    minIndex = i;
   }
+}
 console.log(`Мінімальне значення : ${min} та його індекс ${minIndex}`);
 
 let maxIndex = 0;
 let max = arr[0];
-for(let i = 0 ; i < arr.length; i++){
-  if(arr[i] > max){
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] > max) {
     max = arr[i];
     maxIndex = i;
   }
 }
 console.log(`Максимальне значення: ${max} та його індекс ${maxIndex}`);
 // TASK 4////////////////////////////////////////////////////
-function negative(elem, index, arr){
-  return !isNaN(elem) && elem < 0 ;
-} 
- let negArr = arr.filter(negative);
- console.log(negArr);
+function negative(elem, index, arr) {
+  return !isNaN(elem) && elem < 0;
+}
+let negArr = arr.filter(negative);
+console.log(negArr);
 //  ////////////////////////////////////////////////////
 
-function double(elem,  arr){
-  for (let i = 1; i < arr; i++){
-    if(elem % 2 !== 0 && elem > 0){
+function double(elem, arr) {
+  for (let i = 1; i < arr; i++) {
+    if (elem % 2 !== 0 && elem > 0) {
       return elem;
     }
   }
-};
+}
 
 let noDouble = arr.filter(double);
 console.log(noDouble);
+
+function double2(elem, arr) {
+  for (let i = 1; i < arr; i++) {
+    if (elem % 2 === 0 && elem > 0) {
+      return elem;
+    }
+  }
+}
+
+let delDouble2 = arr.filter(double2);
+console.log(delDouble2);
+
+const sumDouble = arr.reduce(function (acc, val) {
+  return val % 2 === 0 ? acc + val : acc;
+}, 0);
+
+console.log(sumDouble);
+
+const noSumDouble = arr.reduce(function (acc, val) {
+  return val % 2 !== 0 && val > 0 ? acc + val : acc;
+}, 0);
+
+console.log(noSumDouble);
+
+let dobSumm = 1;
+
+for(let i = 1; i < arr.length; i++){
+  if(arr[i] > 0){
+    dobSumm *= arr[i] ;
+
+  }
+};
+console.log(dobSumm);
+
+let maxElemets = arr[0];
+
+for(let i = 1; i < arr.length; i++){
+  if(arr[i] > maxElemets){
+maxElemets = arr[i];
+  }
+};
+
+for(let i= 0; i < arr.length; i++ ){
+  if(arr[i] !== maxElemets){
+  arr[i] = 0;
+  }
+};
+
+console.log(arr);
