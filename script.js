@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // FIRST TASK=///////////////////
 const arr = [
   16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54,
@@ -23,7 +23,7 @@ for (let i = 1; i < arr.length; i++) {
     min = arr[i];
     minIndex = i;
   }
-}
+};
 console.log(`Мінімальне значення : ${min} та його індекс ${minIndex}`);
 
 let maxIndex = 0;
@@ -33,60 +33,56 @@ for (let i = 0; i < arr.length; i++) {
     max = arr[i];
     maxIndex = i;
   }
-}
+};
 console.log(`Максимальне значення: ${max} та його індекс ${maxIndex}`);
 // TASK 4////////////////////////////////////////////////////
 function negative(elem, index, arr) {
   return !isNaN(elem) && elem < 0;
 }
 let negArr = arr.filter(negative);
-console.log(negArr);
-//  ////////////////////////////////////////////////////
+console.log(negArr.length);
+//  task 5////////////////////////////////////////////////////
 
-function double(elem, arr) {
-  for (let i = 1; i < arr; i++) {
+function isNoDoublePositiv(elem, arr) {
     if (elem % 2 !== 0 && elem > 0) {
       return elem;
     }
-  }
-}
+};
 
-let noDouble = arr.filter(double);
-console.log(noDouble);
-
-function double2(elem, arr) {
-  for (let i = 1; i < arr; i++) {
+let noDoublePositiv = arr.filter(isNoDoublePositiv);
+console.log(noDoublePositiv.length);
+// task 6////////////////////////////
+function isDoublePositiv(elem, arr) {
     if (elem % 2 === 0 && elem > 0) {
       return elem;
     }
-  }
-}
+};
 
-let delDouble2 = arr.filter(double2);
-console.log(delDouble2);
-
+let delDoublePositiv = arr.filter(isDoublePositiv);
+console.log(delDoublePositiv);
+// task 7////////////////////////////
 const sumDouble = arr.reduce(function (acc, val) {
-  return val % 2 === 0 ? acc + val : acc;
+  return val % 2 === 0 && val > 0? acc + val : acc;
 }, 0);
 
 console.log(sumDouble);
-
+// task 8////////////////////////////
 const noSumDouble = arr.reduce(function (acc, val) {
   return val % 2 !== 0 && val > 0 ? acc + val : acc;
 }, 0);
 
 console.log(noSumDouble);
-
+// task 9////////////////////////////
 let dobSumm = 1;
 
-for(let i = 1; i < arr.length; i++){
+for(let i = 0; i < arr.length; i++){
   if(arr[i] > 0){
     dobSumm *= arr[i] ;
 
   }
 };
 console.log(dobSumm);
-
+// task 10////////////////////////////
 let maxElemets = arr[0];
 
 for(let i = 1; i < arr.length; i++){
