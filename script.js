@@ -83,18 +83,31 @@ for(let i = 0; i < arr.length; i++){
 };
 console.log(dobSumm);
 // task 10////////////////////////////
-let maxElemets = arr[0];
+let maxNumber = [0];
 
-for(let i = 1; i < arr.length; i++){
-  if(arr[i] > maxElemets){
-maxElemets = arr[i];
-  }
+const arrFor = arr.forEach(function(elem, index){
+if(index > 0 ){
+  if(maxNumber < elem){
+    maxNumber = elem;
+  };
 };
+});
 
-for(let i= 0; i < arr.length; i++ ){
-  if(arr[i] !== maxElemets){
-  arr[i] = 0;
-  }
-};
 
-console.log(arr);
+
+console.log(maxNumber);
+
+const isArrMaxOtherNull = arr.map( function (val){
+return val === maxNumber? val : 0;
+  } 
+);
+
+console.log(isArrMaxOtherNull);
+
+// for(let i= 0; i < arr.length; i++ ){
+//   if(arr[i] !== maxElemets){
+//   arr[i] = 0;
+//   }
+// };
+
+// console.log(arr);
